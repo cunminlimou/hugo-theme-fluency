@@ -126,13 +126,12 @@ li.hashed-tag {
 .article-card {
   box-shadow: 0 0.0625rem 0.3125rem 0.125rem var(--theme-box-shadow-light);
   background-color: var(--theme-background);
-  margin-top: 1.5625rem;
   overflow: hidden;
 }
 
 @mixin title-with-svg {
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   margin-bottom: 0.5rem;
   svg {
     margin-right: 0.2em;
@@ -279,12 +278,15 @@ li.hashed-tag {
   .breadcrumb {
     display: flex;
     width: 100%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
     align-items: center;
     text-align: center;
     font-size: 0.875rem;
-    margin-bottom: 0;
+    margin: 0.5rem 0rem;
+    box-shadow: 0 0.0625rem 0.3125rem 0.125rem var(--theme-box-shadow-light);
+    background-color: var(--theme-background);
+    overflow: hidden;
+	border-radius: 4px;
 
     .breadcrumb-nav {
       li {
@@ -575,7 +577,7 @@ li.hashed-tag {
 
 .post.single {
   padding: 1rem 2rem;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
 
   h1.title {
     font-size: 2.5rem;
@@ -603,10 +605,10 @@ li.hashed-tag {
 .meta {
   display: block;
   position: relative;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-  margin-top: 1.5rem;
+  padding: 0.5rem 2rem;
+  margin-top: 0.5rem;
   transition: height 0.5s ease-in, opacity 0.5s ease-in;
   word-wrap: break-word;
   word-break: break-word;
@@ -631,6 +633,11 @@ li.hashed-tag {
     svg {
       margin-right: 4px;
     }
+  }
+  time.label {
+    margin-right: 0.5em;
+    vertical-align: middle;
+    font-size: 0.9rem;
   }
   .social-share {
     padding: 5px 0;
@@ -846,7 +853,7 @@ li.hashed-tag {
 
 #main.index-page {
   .article-list {
-    margin-top: -1rem;
+    margin-top: 0rem;
 
     &:not(:hover) {
       .post:first-child {
@@ -855,7 +862,7 @@ li.hashed-tag {
     }
 
     .post {
-      margin: 6px 0;
+      margin: 0 0 0.5em 0px;
       padding: 1.2em 32px 1.2em 24px;
       background-color: var(--theme-background);
       border-left: 8px solid transparent;
@@ -890,8 +897,8 @@ li.hashed-tag {
           color: inherit;
         }
       }
-      .content {
-        margin-bottom: 1.8rem;
+      .content{
+        margin-bottom: 1rem;
         p {
           margin: 0 auto;
         }
@@ -906,10 +913,10 @@ li.hashed-tag {
         font-weight: 400;
         letter-spacing: 0;
         text-transform: uppercase;
-        &:after {
-          content: '\2192';
-          margin-left: 2px;
-        }
+//        &:after {
+//          content: '\2192';
+//          margin-left: 2px;
+//        }
       }
       .right {
         font-size: 0.8125rem;
@@ -989,9 +996,10 @@ li.hashed-tag {
     padding: 1rem 0;
     flex-wrap: wrap;
 
-    &:not(:last-child) {
+/*    &:not(:last-child) {
       border-bottom: 2px solid var(--theme-border);
-    }
+    }*/
+	border-top: 0.2rem solid var(--theme-border);
   }
 
   .archive-year-header {

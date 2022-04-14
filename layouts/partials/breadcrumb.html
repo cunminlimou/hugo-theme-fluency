@@ -1,8 +1,7 @@
-{{ if not .IsHome }}
 <ol  class="breadcrumb-nav">
   {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
 </ol>
-{{ end }}
+
 
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}
@@ -11,6 +10,6 @@
   {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
 {{ end }}
 <li {{ if eq .p1 .p2 }}class="active"{{ end }}>
-  <a href="{{ .p1.Permalink }}">{{ if .p1.IsHome }}{{ i18n "home" }}{{ else }}{{ .p1.Title }}{{end}}</a>
+  <a href="{{ .p1.Permalink }}">{{ if .p1.IsHome }}{{ i18n "home" }}{{ else }}{{ if eq .p1.Title "Posts" }}{{ i18n "posts" }}{{ else if eq .p1.Title "Tags" }}{{ i18n "tags" }}{{ else if eq .p1.Title "Archives" }}{{ i18n "archives" }}{{ else }}{{ .p1.Title }}{{end}}{{end}}</a>
 </li>
 {{ end }}

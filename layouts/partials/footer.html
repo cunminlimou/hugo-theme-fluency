@@ -1,6 +1,6 @@
 <footer id="footer">
   <div class="container has-padding is-flex">
-    <ul class="links">
+<!--    <ul class="links">
       {{ range .Site.Menus.footer }}
       <li>
         {{ $targetURL := .URL | relURL }}
@@ -22,13 +22,14 @@
       <li>
         <a rel="nofollow" target="_blank" href="https://gohugo.io" title="Built with hugo">Built with Hugo</a>
       </li>
-    </ul>
-    <div class="copyright">
+    </ul>-->
+    <div class="copyright" style="margin: auto; display: flex; justify-content: center;">
       {{ with .Site.Params.copyright }}
-        {{ . | safeHTML }} {{ else }} &copy; {{ now.Format "2006"}} {{ .Site.Title }}
+        {{ . | safeHTML }} {{ else }}Copyright &copy; {{ now.Format "2006"}} {{ .Site.Params.author }} 版权所有
       {{ end }}
     </div>
   </div>
 </footer>
 
 {{ partial "scripts.html" . }}
+

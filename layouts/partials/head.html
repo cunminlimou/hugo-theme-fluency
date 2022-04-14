@@ -1,5 +1,6 @@
 {{ $siteTitle := .Site.Title }}
-{{ $title := cond .IsHome .Site.Title (print .Title " | " .Site.Title)  }}
+{{ $tmp := cond (eq .Title "Posts") (i18n "posts") (cond (eq .Title "Tags") (i18n "tags") (cond (eq .Title "Archives") (i18n "archives") .Title)) }}
+{{ $title := cond .IsHome .Site.Title (print $tmp " | " .Site.Title) }}
 {{ $description := "" }}
 {{ $tags := "" }}
 {{ with .Description }} {{ $description = . }} {{ else }} {{ $description = cond .IsPage .Summary (.Site.Params.description | default "") }} {{ end }}

@@ -13,10 +13,10 @@
           <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
         </h3>
         <div class="content summary">
-          <p>{{ .Summary | safeHTML }}</p>
+          <p>{{ .Summary | safeHTML }}
           {{ if .Truncated }}
             <span class="hellip">&hellip;</span>
-          {{ end }}
+          {{ end }}</p>
         </div>
         <a class="readmore" href="{{ .Permalink }}" aria-label="{{ i18n "readMore" }}">{{ i18n "readMore" }}</a>
         <div class="right">
