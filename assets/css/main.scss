@@ -590,7 +590,7 @@ li.hashed-tag {
     & > *:not(:last-child):after {
       padding-left: 5px;
       padding-right: 5px;
-      content: '\2022';
+      content: ' ';
     }
     a {
       color: var(--theme-text-subtle);
